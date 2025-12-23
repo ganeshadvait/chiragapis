@@ -425,7 +425,7 @@ async function sendLeadNotification(leadData) {
 
     const data = await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL,
-      to: process.env.ADMIN_EMAIL,
+      to: ["ganesh@advaitlabs.com", "admin@example.com", "team@example.com"],
       subject: `New Lead: ${
         leadData.full_name || leadData.phone_number
       } - ${new Date().toLocaleString("en-US", {
