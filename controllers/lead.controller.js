@@ -1,8 +1,15 @@
 const Lead = require("../models/Lead");
+const { sendLeadNotification } = require("../services/email.service");
 
 exports.createLead = async (req, reply) => {
   try {
     const lead = await Lead.create(req.body);
+
+    // Send email notification asynchronously (don't wait for it)
+    sendLeadNotification(lead.toObject()).catch((err) => {
+      console.error("Email notification error:", err);
+    });
+
     return reply.code(201).send({
       success: true,
       message: "Lead created successfully",
@@ -29,7 +36,6 @@ exports.createLead = async (req, reply) => {
   }
 };
 
-
 exports.getLeads = async (req, reply) => {
   try {
     const Leads = await Lead.find().sort({ createdAt: -1 });
@@ -45,7 +51,7 @@ exports.getLeads = async (req, reply) => {
       error: process.env.NODE_ENV === "development" ? err.message : undefined,
     });
   }
-}
+};
 
 exports.getLeadById = async (req, reply) => {
   try {
@@ -67,4 +73,4 @@ exports.getLeadById = async (req, reply) => {
       error: process.env.NODE_ENV === "development" ? err.message : undefined,
     });
   }
-}
+};
