@@ -7,6 +7,18 @@ fastify.register(rateLimit, {
   timeWindow: "1 minute",
 });
 
+// Root route
+fastify.get("/", async (request, reply) => {
+  return {
+    message: "Chirag APIs is running",
+    status: "OK",
+    endpoints: {
+      leads: "/api/leads",
+      submitLead: "/api/leads/submit",
+    },
+  };
+});
+
 fastify.register(leadRoutes, { prefix: "/api/leads" });
 
 module.exports = fastify;

@@ -7,7 +7,7 @@ const start = async () => {
 
   try {
     await fastify.listen({
-      port: process.env.PORT,
+      port: process.env.PORT || 3000,
       host: "0.0.0.0",
     });
     console.log("🚀 Server running");
