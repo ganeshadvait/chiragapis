@@ -424,7 +424,7 @@ async function sendLeadNotification(leadData) {
     `;
 
     const data = await resend.emails.send({
-      from: process.env.RESEND_FROM_EMAIL,
+      from: "ganesh@chirag.advaitlabs.com",
       to: [
         "ganesh@advaitlabs.com",
         "tools@advaitlabs.com",
