@@ -32,7 +32,7 @@ async function sendLeadNotification(leadData) {
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
           }
           .header { 
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #667eea;
             color: white; 
             padding: 32px 24px; 
             text-align: center;
@@ -425,7 +425,11 @@ async function sendLeadNotification(leadData) {
 
     const data = await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL,
-      to: ["ganesh@advaitlabs.com", "admin@example.com", "team@example.com"],
+      to: [
+        "ganesh@advaitlabs.com",
+        "tools@advaitlabs.com",
+        "vamshi@advaitlabs.com",
+      ],
       subject: `New Lead: ${
         leadData.full_name || leadData.phone_number
       } - ${new Date().toLocaleString("en-US", {

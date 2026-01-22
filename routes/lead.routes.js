@@ -1,3 +1,4 @@
+//File: routes/lead.routes.js
 const {
   createLead,
   getLeads,
@@ -11,6 +12,11 @@ async function leadRoutes(fastify) {
 
   // Dynamic routes last
   fastify.get("/:id", getLeadById);
+  console.log({
+    createLead,
+    getLeads,
+    getLeadById,
+  });
 }
 
 module.exports = leadRoutes;
