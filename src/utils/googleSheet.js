@@ -54,8 +54,8 @@ async function appendLeadToSheet(lead) {
   await sheets.spreadsheets.values.append({
     spreadsheetId: process.env.GOOGLE_SHEET_ID,
     range: "'landing page leads'!A:Z",
-    valueInputOption: "RAW", // Changed from USER_ENTERED to RAW
-    insertDataOption: "INSERT_ROWS", // Explicitly insert new rows
+    valueInputOption: "RAW", 
+    insertDataOption: "INSERT_ROWS", 
     requestBody: {
       values: [rowValues],
     },
