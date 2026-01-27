@@ -429,6 +429,8 @@ async function sendLeadNotification(leadData) {
         "ganesh@advaitlabs.com",
         "tools@advaitlabs.com",
         "vamshi@advaitlabs.com",
+        "chiraghospitals@gmail.com",
+        "chiragglobalhospital@gmail.com"
       ],
       subject: `New Lead: ${
         leadData.full_name || leadData.phone_number
