@@ -432,14 +432,12 @@ async function sendLeadNotification(leadData) {
         "chiraghospitals@gmail.com",
         "chiragglobalhospital@gmail.com"
       ],
-      subject: `New Lead: ${
-        leadData.full_name || leadData.phone_number
-      } - ${new Date().toLocaleString("en-US", {
+      subject: `New Lead  - ${new Date().toLocaleString("en-US", {
         month: "short",
         day: "numeric",
         hour: "2-digit",
         minute: "2-digit",
-      })}`,
+      })} from Book.ChiragHospitals.com`,
       html: emailContent,
     });
 
