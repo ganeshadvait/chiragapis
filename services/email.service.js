@@ -432,7 +432,7 @@ async function sendLeadNotification(leadData) {
         "chiraghospitals@gmail.com",
         "chiragglobalhospital@gmail.com"
       ],
-      subject: `New Lead  - ${new Date().toLocaleString("en-US", {
+      subject: `New Lead FROM Landing Page  - ${new Date().toLocaleString("en-US", {
         month: "short",
         day: "numeric",
         hour: "2-digit",
